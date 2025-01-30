@@ -1,0 +1,46 @@
+f(
+    !IsBlank(Keyph.HtmlText),
+    Upper('Language detection'.Predict(Keyph.HtmlText).Language),
+    ""
+)
+
+This **Power Fx formula** is performing **language detection** on user input and converting the detected language code to uppercase.  
+
+---
+
+### **Breakdown of the Formula**  
+
+#### **Step 1: Check if Input is Not Blank**  
+```PowerApps
+If(!IsBlank(Keyph.HtmlText),
+```
+- Ensures that `Keyph.HtmlText` (user input) **is not empty** before running language detection.  
+- If it is blank, the formula returns an **empty string (`""`)** instead of running the detection.  
+
+#### **Step 2: Perform Language Detection & Convert to Uppercase**  
+```PowerApps
+Upper('Language detection'.Predict(Keyph.HtmlText).Language)
+```
+- Calls the **Language Detection** AI model:  
+  ```PowerApps
+  'Language detection'.Predict(Keyph.HtmlText).Language
+  ```
+  - This returns a **language code** (e.g., `"en"`, `"es"`, `"fr"` for English, Spanish, and French).  
+- Converts the detected language code to **uppercase** using `Upper()`, ensuring consistency.  
+  - Example: `"en"` → `"EN"`, `"es"` → `"ES"`.  
+
+#### **Step 3: Return an Empty String if Text is Blank**  
+```PowerApps
+, ""
+```
+- If `Keyph.HtmlText` is blank, return an **empty string (`""`)** instead of running detection.  
+
+---
+
+### **Final Behavior of the Formula**  
+- If `Keyph.HtmlText` is blank → Returns `""` (empty).  
+- If the user enters text in English → Returns `"EN"`.  
+- If the user enters text in Spanish → Returns `"ES"`.  
+- If the user enters text in French → Returns `"FR"`, and so on.  
+
+---
