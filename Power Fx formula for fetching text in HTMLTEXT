@@ -1,0 +1,5 @@
+Ususally the text that we extract from Image has to be displayed in HTMLTEXT label hence to extract that text and display it properly we can use the below power FX expression:
+
+Concat(varExtractedtext, Text, "<br/>")
+
+This is a Power Fx formula that concatenates values from varExtractedtext with Text, separated by "<br/>".
