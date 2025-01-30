@@ -45,6 +45,10 @@ Extract Key Phrases: Identify essential keywords and phrases from the text.
 
 **Screenshots**
 
+![image](https://github.com/user-attachments/assets/93abf546-d82b-4d11-8be3-b8522e41d1b6)
+![image](https://github.com/user-attachments/assets/0a5a8d8f-e69a-4d17-9ace-cea661b2cb16)
+![image](https://github.com/user-attachments/assets/71a5bf9f-02aa-4c87-bdd2-822132bc9dd3)
+![image](https://github.com/user-attachments/assets/af0f37ed-6f5d-4a22-ae94-838177c6a34d)
 
 
 **Future Enhancements**
