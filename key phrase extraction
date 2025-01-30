@@ -1,0 +1,27 @@
+Set(PlainTextVar1, 'Key phrase extraction'.Predict(Keyph.HtmlText).Phrases);
+ If(!IsBlank(PlainTextVar1), Navigate(Key_Phrases, ScreenTransition.None))
+
+This **Power Fx formula** in Power Apps is performing **key phrase extraction** and navigating based on the result. Let's break it down:  
+
+### **Step 1: Setting a Variable**  
+```PowerApps
+Set(PlainTextVar1, 'Key phrase extraction'.Predict(Keyph.HtmlText).Phrases)
+```
+- `'Key phrase extraction'` appears to be an AI model or a Power Apps AI Builder function that extracts key phrases from text.  
+- It is applied to `Keyph.HtmlText`, which likely contains the user's input text.  
+- `.Phrases` extracts the detected key phrases.  
+- `Set(PlainTextVar1, …)` stores the extracted phrases in `PlainTextVar1`.  
+
+### **Step 2: Conditional Navigation**  
+```PowerApps
+If(!IsBlank(PlainTextVar1), Navigate(Key_Phrases, ScreenTransition.None))
+```
+- `IsBlank(PlainTextVar1)` checks if the extracted key phrases exist.  
+- The `!` (not) operator ensures that the navigation happens only if `PlainTextVar1` is **not blank**.  
+- `Navigate(Key_Phrases, ScreenTransition.None)` moves the user to the **Key_Phrases** screen without a transition effect.  
+
+### **Purpose of This Formula**  
+- Extracts **key phrases** from user input using AI.  
+- If key phrases are found, the user is redirected to a screen displaying them.  
+
+This is useful for **text analysis applications**, such as summarizing user input or categorizing important topics from text.
