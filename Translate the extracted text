@@ -1,0 +1,22 @@
+The extracted text can be translated using the AI model, first we need to import the Translate AI model from Data section and we can then use the below expression:
+
+Explaination:
+
+Set(PlainTextVar, PlainText('TextTranslationInternal model'.Predict(Keyph.HtmlText).Text));
+If(!IsBlank(PlainTextVar), Navigate(Translation, ScreenTransition.None))
+
+This is a Power Fx formula used in Power Apps. It performs two main actions:
+
+Setting a Variable
+Set(PlainTextVar, PlainText('TextTranslationInternal model'.Predict(Keyph.HtmlText).Text))
+
+This uses the Set function to assign a value to PlainTextVar.
+It calls 'TextTranslationInternal model'.Predict(Keyph.HtmlText).Text, which seems to be a machine learning model predicting text.
+The result is passed to PlainText(), which extracts plain text from the response.
+Finally, PlainTextVar stores this extracted text.
+
+Conditional Navigation
+If(!IsBlank(PlainTextVar), Navigate(Translation, ScreenTransition.None))
+
+It checks if PlainTextVar is not blank using !IsBlank(PlainTextVar).
+If true, it navigates to the Translation screen with no transition effect (ScreenTransition.None).
