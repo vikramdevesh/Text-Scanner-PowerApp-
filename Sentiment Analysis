@@ -1,0 +1,54 @@
+If(
+    !IsBlank(Keyph.HtmlText),
+    If(
+    'Sentiment analysis'.Predict(Keyph.HtmlText).Document.TopSentiment.Name = "Positive",
+    "🤩",
+    If(
+        'Sentiment analysis'.Predict(Keyph.HtmlText).Document.TopSentiment.Name = "Negative",
+        "😒",
+        "🙂"
+    )
+))
+
+This **Power Fx formula** in Power Apps is performing **sentiment analysis** on the text and returning an emoji based on the detected sentiment.  
+
+### **Breakdown of the Formula**  
+
+#### **Step 1: Check if Input is Not Blank**  
+```PowerApps
+If(!IsBlank(Keyph.HtmlText),
+```
+- Ensures that the input text (`Keyph.HtmlText`) is **not empty** before running sentiment analysis.  
+- If it is blank, the formula does nothing (returns nothing).  
+
+#### **Step 2: Perform Sentiment Analysis**  
+```PowerApps
+'Sentiment analysis'.Predict(Keyph.HtmlText).Document.TopSentiment.Name
+```
+- Calls the **Sentiment Analysis** AI model (`'Sentiment analysis'.Predict(...)`).  
+- Extracts the **top sentiment** (`.Document.TopSentiment.Name`).  
+- This returns one of the sentiment categories: `"Positive"`, `"Negative"`, or `"Neutral"`.  
+
+#### **Step 3: Assign an Emoji Based on Sentiment**  
+```PowerApps
+If(
+    'Sentiment analysis'.Predict(Keyph.HtmlText).Document.TopSentiment.Name = "Positive",
+    "🤩",
+    If(
+        'Sentiment analysis'.Predict(Keyph.HtmlText).Document.TopSentiment.Name = "Negative",
+        "😒",
+        "🙂"
+    )
+)
+```
+- If **sentiment is `"Positive"`**, return `"🤩"` (happy face).  
+- If **sentiment is `"Negative"`**, return `"😒"` (disappointed face).  
+- If it's neither (likely `"Neutral"`), return `"🙂"` (neutral face).  
+
+### **Final Behavior of the Formula**  
+- If `Keyph.HtmlText` is blank → No emoji is returned.  
+- If the text is positive → Displays `"🤩"`.  
+- If the text is negative → Displays `"😒"`.  
+- Otherwise (neutral) → Displays `"🙂"`.  
+
+
